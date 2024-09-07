@@ -1,0 +1,22 @@
+.icon {
+    @apply bg-current inline-block;
+}
+
+.icon-user {
+    mask: url('/svg/icons/user.svg');
+    mask-position: center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    width: 1em;
+    height: 1em;
+    color: black;
+}
+.icon-bag-shopping {
+    mask: url('/svg/icons/bag-shopping.svg');
+    mask-position: center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    width: 1em;
+    height: 1em;
+    color: black;
+}

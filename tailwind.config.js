@@ -1,15 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
-        './components/**/*.{vue,js}',
-        './layouts/**/*.vue',
-        './pages/**/*.vue',
-        './app.vue',
-        './error.vue',
-        './plugins/**/*.{js,ts}',
-        './nuxt.config.{js,ts}',
     ],
     theme: {
+        colors: {
+            'gray': {
+                100 : "#f3f3f3",
+                200 : "#d8d8d8",
+            },
+            inherit: 'inherit',
+            current: 'currentColor',
+            transparent: 'transparent',
+            black: '#000000',
+            white: '#FFFFFF',
+        },
         screens: {
             'xs': '576px',
             's': '1024px',
