@@ -61,7 +61,7 @@
     </swiper-container>
   </section>
 
-  <section id="guide" class="mt-10 mb-96">
+  <section id="guide" class="mt-10 mb-20">
     <div class="max-w-7xl mx-auto">
       <h2 class="text-h1 sm:text-8xl font-bold pl-16 sm:translate-y-3">Le guide <br>VTTAE</h2>
       <div class="flex flex-col sm:flex-row max-w-6xl mx-auto">
@@ -72,13 +72,31 @@
             <p class="text-white mr-auto text-h3 sm:text-h2 font-light">Tout ce que vous devez savoir sur les VTT
               électriques.</p>
             <nuxt-link href="#"
-                       class="guideBtn bg-white border px-7 py-3 font-semibold mr-auto inline-block hover:bg-black hover:text-white hover:border-white">
+                       class="btn-white mr-auto">
               Voir le guide
             </nuxt-link>
           </div>
         </div>
       </div>
     </div>
+  </section>
+
+  <section id="bike-finder">
+    <div class="flex relative">
+      <nuxt-picture src="/picture/img1.jpg" class="w-full h-full"
+                    :img-attrs="{class: 'w-full h-full object-contain'}"></nuxt-picture>
+      <nuxt-picture src="/picture/img3.jpg" class="w-full h-full hidden sm:block"
+                    :img-attrs="{class: 'w-full h-full object-contain'}"></nuxt-picture>
+      <div class="absolute space-y-3 sm:space-y-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+        <h3 class="text-h3 sm:text-4xl m:text-7xl text-white font-bold">Trouvez votre <strong>vélo</strong></h3>
+        <p class="sm:text-xl font-bold max-w-80 mx-auto text-white">Utilisez votre Bike Finder pour choisir le vélo parfait
+          pour
+          vous.</p>
+        <nuxt-link href="#" class="btn-white">Commencer</nuxt-link>
+      </div>
+
+    </div>
+
   </section>
 
 </template>
@@ -175,10 +193,6 @@ const categoryData = [
   60% {
     transform: translateY(-15px) translateX(-50%) rotate(90deg);
   }
-}
-
-.guideBtn {
-  transition: all 0.5s ease;
 }
 
 </style>
