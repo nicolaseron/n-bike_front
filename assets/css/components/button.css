@@ -1,3 +1,7 @@
-.btn {
-    @apply border border-white bg-blue text-white p-2 rounded-md
+.btn-blue {
+    @apply border border-white bg-blue text-white p-2 rounded-md inline-block
+}
+
+.btn-white {
+    @apply bg-white border px-7 py-3 font-semibold inline-block hover:bg-black hover:text-white hover:border-white transition-all duration-500
 }
