@@ -1,9 +1,9 @@
 <template>
-  <section id="introduction" class="w-full height-without-header overflow-hidden relative">
+  <section id="introduction" class="w-full h-screen overflow-hidden relative">
     <nuxt-picture
         src="/picture/img9.jpg"
         loading="lazy"
-        :img-attrs="{ class: 'w-full h-full object-cover object-[100%_100%]'}"
+        :img-attrs="{ class: 'w-full h-full object-cover object-[85%_100%]'}"
     >
     </nuxt-picture>
     <nuxt-link to="#presentation" class="w-fit inline-block circle bounce border border-black rounded-full">
@@ -71,7 +71,10 @@
           <div class="space-y-16">
             <p class="text-white mr-auto text-h3 sm:text-h2 font-light">Tout ce que vous devez savoir sur les VTT
               électriques.</p>
-            <nuxt-link href="#" class="guideBtn bg-white border px-7 py-3 font-semibold mr-auto inline-block hover:bg-black hover:text-white hover:border-white">Voir le guide</nuxt-link>
+            <nuxt-link href="#"
+                       class="guideBtn bg-white border px-7 py-3 font-semibold mr-auto inline-block hover:bg-black hover:text-white hover:border-white">
+              Voir le guide
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -140,9 +143,6 @@ const categoryData = [
 </script>
 
 <style scoped>
-.height-without-header {
-  height: calc(100vh - 144px);
-}
 
 .circle {
   position: absolute;
@@ -176,6 +176,7 @@ const categoryData = [
     transform: translateY(-15px) translateX(-50%) rotate(90deg);
   }
 }
+
 .guideBtn {
   transition: all 0.5s ease;
 }

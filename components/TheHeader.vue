@@ -1,10 +1,8 @@
 <template>
-  <header class="bg-gray-100">
-    <div class="border-b border-gray-200 py-5 px-10">
+  <header class="bg-gray-100 w-full fixed top-0 z-10" :class="{'header-up': scrollToDown}">
+    <div class="border-b border-gray-200 py-4 px-2 xs:px-10">
       <div class="flex items-center justify-between max-w-7xl mx-auto">
-        <nuxt-link to="#">
-          <NuxtImg src="/logo/n-bike-logo.png" class="w-64" alt="logo"/>
-        </nuxt-link>
+        <NuxtImg src="/logo/n-bike-logo.png" class="w-3/6 xs:w-2/6 max-w-80" alt="logo"/>
         <div class="space-x-5">
           <nuxt-link to="#"><i class="icon icon-user text-2xl"></i></nuxt-link>
           <nuxt-link to="#"><i class="icon icon-bag-shopping text-2xl"></i></nuxt-link>
@@ -12,13 +10,14 @@
       </div>
     </div>
     <div>
-      <nav class="flex items-center justify-between max-w-4xl mx-auto px-16 py-3 font-semibold gap-x-6">
+      <nav
+          class="hidden max-w-4xl mx-auto px-5 s:px-16 py-3 font-semibold sm:flex items-center justify-between gap-x-6">
         <nuxt-link to="#">Chrono</nuxt-link>
         <nuxt-link to="#">VTT</nuxt-link>
         <nuxt-link to="#">Route</nuxt-link>
         <nuxt-link to="#">Gravel</nuxt-link>
-<!--        <nuxt-link to="#">Vélos pour enfants</nuxt-link>-->
-<!--        <nuxt-link to="#">Équipement et accessoires</nuxt-link>-->
+        <nuxt-link to="#" class="text-nowrap">Vélos pour enfants</nuxt-link>
+        <nuxt-link to="#" class="text-nowrap">Équipement et accessoires</nuxt-link>
       </nav>
     </div>
   </header>
@@ -26,8 +25,31 @@
 
 <script setup lang="ts">
 
+let lastScrollTop = ref(0);
+const scrollToDown = ref(false);
+
+const handleScroll = () => {
+  scrollToDown.value = window.scrollY > lastScrollTop.value;
+  lastScrollTop.value = window.scrollY;
+};
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
+
 </script>
 
 <style scoped>
+header {
+  transition: transform 0.5s ease;
+}
+
+.header-up {
+  transform: translateY(-160px);
+}
 
 </style>
