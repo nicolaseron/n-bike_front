@@ -1,6 +1,6 @@
 <template>
   <footer>
-    foot
+
   </footer>
 </template>
 

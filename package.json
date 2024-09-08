@@ -13,6 +13,7 @@
     "@nuxt/image": "^1.8.0",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "nuxt": "^3.13.0",
+    "swiper": "^11.1.12",
     "vue": "latest",
     "vue-router": "latest"
   }

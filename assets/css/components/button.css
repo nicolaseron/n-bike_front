@@ -1,0 +1,3 @@
+.btn {
+    @apply border border-white bg-blue text-white p-2 rounded-md
+}

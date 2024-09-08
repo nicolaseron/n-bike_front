@@ -12,11 +12,13 @@
       </div>
     </div>
     <div>
-      <nav class="flex items-center justify-between max-w-2xl mx-auto px-16 py-3 font-semibold">
+      <nav class="flex items-center justify-between max-w-4xl mx-auto px-16 py-3 font-semibold gap-x-6">
+        <nuxt-link to="#">Chrono</nuxt-link>
         <nuxt-link to="#">VTT</nuxt-link>
         <nuxt-link to="#">Route</nuxt-link>
-        <nuxt-link to="#">VAE</nuxt-link>
         <nuxt-link to="#">Gravel</nuxt-link>
+<!--        <nuxt-link to="#">Vélos pour enfants</nuxt-link>-->
+<!--        <nuxt-link to="#">Équipement et accessoires</nuxt-link>-->
       </nav>
     </div>
   </header>
