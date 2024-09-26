@@ -5,7 +5,9 @@
                     :img-attrs="{ class: `object-cover w-full h-full rounded-md` , style : `object-position : ${objectPosition}`}"></nuxt-picture>
       <div class="bg-gray-200 bg-opacity-80 description p-3">
         <p>{{ description }}</p>
-        <nuxt-link :to="link" class="btn-blue mt-5 mb-2">Explorez</nuxt-link>
+        <nuxt-link :to="{name : 'categories-category' , params: {category : link}}" class="btn-blue mt-5 mb-2">
+          Explorez
+        </nuxt-link>
       </div>
     </div>
     <p class="text-h5 mt-3">{{ title }}</p>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <the-header/>
+    <the-header class="sticky"/>
     <slot/>
     <the-footer/>
   </div>
