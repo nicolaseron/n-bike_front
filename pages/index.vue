@@ -1,9 +1,16 @@
 <template>
   <section id="introduction" class="w-full h-screen overflow-hidden relative">
     <nuxt-picture
-        src="/picture/img9.jpg"
+        src="/picture/img4.jpg"
         loading="lazy"
-        :img-attrs="{ class: 'w-full h-full object-cover object-[85%_100%]'}"
+        :img-attrs="{ class: 'w-full h-full object-cover object-[center_25%]'}"
+        class="hidden sm:block h-full"
+    ></nuxt-picture>
+    <nuxt-picture
+        src="/picture/img5.jpg"
+        loading="lazy"
+        :img-attrs="{ class: 'w-full h-full object-cover'}"
+        class="sm:hidden h-full"
     >
     </nuxt-picture>
     <nuxt-link to="#presentation" class="w-fit inline-block circle bounce border border-black rounded-full">
@@ -89,7 +96,8 @@
                     :img-attrs="{class: 'w-full h-full object-contain'}"></nuxt-picture>
       <div class="absolute space-y-3 sm:space-y-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
         <h3 class="text-h3 sm:text-4xl m:text-7xl text-white font-bold">Trouvez votre <strong>vélo</strong></h3>
-        <p class="sm:text-xl font-bold max-w-80 mx-auto text-white">Utilisez votre Bike Finder pour choisir le vélo parfait
+        <p class="sm:text-xl font-bold max-w-80 mx-auto text-white">Utilisez votre Bike Finder pour choisir le vélo
+          parfait
           pour
           vous.</p>
         <nuxt-link href="#" class="btn-white">Commencer</nuxt-link>
@@ -102,7 +110,12 @@
 </template>
 
 <script setup lang="ts">
+import {definePageMeta} from "#imports"
 import {register} from 'swiper/element/bundle';
+
+definePageMeta({
+  layout: "home"
+})
 
 register();
 
@@ -113,7 +126,7 @@ const categoryData = [
     img: "/picture/img8.jpg",
     title: "Chrono",
     description: "Nos vélos de chrono allient aérodynamisme ultime et précision, conçus pour maximiser chaque watt. Idéals pour triathlons ou contre-la-montre, ils vous aideront à gagner en vitesse et en efficacité.",
-    link: "#",
+    link: "chrono",
     objectPosition: "50% 70%"
   },
   {
@@ -121,7 +134,7 @@ const categoryData = [
     img: "/picture/img2.jpg",
     title: "VTT",
     description: "Les VTT sont la clé du paradis pour tout passionné de montagne. Des montées aux descentes, en course ou non, ces engins sauront affronter tous les aléas de la montagne.",
-    link: "#",
+    link: "vtt",
     objectPosition: "80% 50%"
   },
   {
@@ -129,7 +142,7 @@ const categoryData = [
     img: "/picture/img7.jpg",
     title: "Route",
     description: "Notre gamme compte des poids plume pour grimper, des bijoux d'aérodynamisme ultrarapides et des modèles confortables pour le plat. Où que vous traciez votre route, nous avons un vélo pour vous.",
-    link: "#",
+    link: "road",
     objectPosition: "50% 100%"
   },
   {
@@ -137,7 +150,7 @@ const categoryData = [
     img: "/picture/img13.jpg",
     title: "Gravel",
     description: "Nos vélos gravel sont conçus pour l'aventure, alliant robustesse et polyvalence. Que vous rouliez sur route, sentiers ou graviers, ils offrent stabilité et confort pour explorer sans limites.",
-    link: "#",
+    link: "gravel",
     objectPosition: "50% 50%"
   },
   {
@@ -145,7 +158,7 @@ const categoryData = [
     img: "/picture/img14.jpg",
     title: "Vélos pour enfants",
     description: "Nos vélos pour enfants sont spécialement conçus pour la sécurité, la légèreté et le plaisir. Parfaits pour apprendre et s'amuser, ils offrent une maniabilité facile et un confort adapté aux jeunes cyclistes.",
-    link: "#",
+    link: "child",
     objectPosition: "50% 50%"
   },
   {
@@ -153,7 +166,7 @@ const categoryData = [
     img: "/picture/img15.jpg",
     title: "Équipements et accessoires",
     description: "Notre gamme de vêtements et accessoires allie style, confort et performance. Conçus pour s'adapter à toutes vos sorties, ils offrent protection, respirabilité et liberté de mouvement, pour que rien ne vous arrête sur la route.",
-    link: "#",
+    link: "equipment",
     objectPosition: "50% 50%"
   },
 ]

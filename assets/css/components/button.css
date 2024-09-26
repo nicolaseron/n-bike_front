@@ -1,5 +1,5 @@
 .btn-blue {
-    @apply border border-white bg-blue text-white p-2 rounded-md inline-block
+    @apply bg-blue text-white p-2 rounded-md inline-block
 }
 
 .btn-white {

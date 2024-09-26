@@ -11,6 +11,7 @@
     height: 1em;
     color: black;
 }
+
 .icon-bag-shopping {
     mask: url('/svg/icons/bag-shopping.svg');
     mask-position: center;
@@ -20,6 +21,7 @@
     height: 1em;
     color: black;
 }
+
 .icon-arrow {
     mask: url('/svg/icons/arrow.svg');
     mask-position: center;
@@ -28,4 +30,13 @@
     width: 1em;
     height: 1em;
     color: black;
+}
+
+.icon-bolt {
+    mask: url('/svg/icons/bolt-lightning-solid.svg');
+    mask-position: center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    width: 1em;
+    height: 1em;
 }
