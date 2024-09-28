@@ -16,6 +16,8 @@ export default {
             blue: "#00a4fc",
             lightGray: "#f3f0f3",
             yellow: "#ffc107",
+            pink:"#ff4952",
+            red:"#ff0808"
         },
         screens: {
             'xs': '576px',
