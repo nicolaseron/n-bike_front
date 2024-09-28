@@ -40,3 +40,39 @@
     width: 1em;
     height: 1em;
 }
+
+.icon-facebook {
+    mask: url('/svg/icons/facebook-brands-solid.svg');
+    mask-position: center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    width: 1em;
+    height: 1em;
+}
+
+.icon-twitter {
+    mask: url('/svg/icons/x-twitter-brands-solid.svg');
+    mask-position: center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    width: 1em;
+    height: 1em;
+}
+
+.icon-instagram {
+    mask: url('/svg/icons/instagram-brands-solid.svg');
+    mask-position: center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    width: 1em;
+    height: 1em;
+}
+
+.icon-youtube {
+    mask: url('/svg/icons/youtube-brands-solid.svg');
+    mask-position: center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    width: 1em;
+    height: 1em;
+}
