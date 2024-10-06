@@ -1,6 +1,6 @@
 <template>
   <div class="w-40 sm:w-80 md:w-96">
-    <nuxt-link to="#" class="bike-card">
+    <nuxt-link :to="`../bike/${id}`" class="bike-card">
       <div class="bg-lightGray p-2 sm:p-4 rounded-2xl shadow-lg shadow-gray-200">
         <div class="flex justify-between items-center pb-2">
           <p class="font-semibold text-sm sm:text-xl uppercase">{{ brand }}</p>
@@ -34,6 +34,7 @@ defineProps({
   stock: Number,
   size: String,
   isElectric: Boolean,
+  id: String,
 })
 </script>
 
