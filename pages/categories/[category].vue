@@ -1,17 +1,20 @@
 <template>
   <main class="min-h-screen">
     <section id="presentation">
-      <h1 class="text-h1 text-gray-500 font-semibold text-center my-8">{{ categoryStore.currentCategory.title }}</h1>
-      <p class="text-center text-xl max-w-4xl leading-10 tracking-wider font-semibold mx-auto px-10">
+      <h1 class="text-h1 text-gray-500 font-semibold text-center my-8 reveal reveal-bottom-400">
+        {{ categoryStore.currentCategory.title }}</h1>
+      <p class="text-center text-xl max-w-4xl leading-10 tracking-wider font-semibold mx-auto px-10 reveal reveal-bottom-400">
         {{ categoryStore.currentCategory.description }}</p>
-      <div class="my-8">
+      <div class="my-8 reveal reveal-bottom-400">
         <nuxt-picture :src=" categoryStore.currentCategory.img_url"
                       :img-attrs="{class : 'w-full'}">
         </nuxt-picture>
       </div>
     </section>
-    <div v-if="bikes?.length" class="flex align-center justify-end gap-x-5 mr-16">
-      <p class="font-semibold">{{ bikes?.length }} {{ bikes?.length > 1 ? "articles" : "article" }}</p>
+    <div v-show="bikes?.length" class="flex align-center justify-end gap-x-5 mr-16 reveal reveal-right-400">
+      <p v-if="bikes?.length" class="font-semibold">{{ bikes?.length }} {{
+          bikes?.length > 1 ? "articles" : "article"
+        }}</p>
       <select class="border border-black shadow-sm p-1" @change="sortBike">
         <option value="" class="mx-auto text-center">--Trier--</option>
         <option value="price_ASC">Prix croissant</option>
@@ -20,8 +23,9 @@
       </select>
     </div>
     <section id="bikes" class="flex mt-10">
-      <div class="h-[500px] overflow-y-scroll space-y-3 sticky top-24 sm:top-40 min-w-40 sm:min-w-52 ml-2 sm:ml-10"
-           id="custom-scrollbar">
+      <div
+          class="h-[500px] overflow-y-scroll space-y-3 sticky top-24 sm:top-40 min-w-40 sm:min-w-56 px-2 sm:px-5 reveal reveal-left-400"
+          id="custom-scrollbar">
         <filter-options v-for="filter in filteredStore.filter" class="filter-group" :key="filter.id"
                         :id="filter.search_url" :heading-name="filter.title">
           <div v-for="(option, index) in filter.options" class="my-1 cursor-pointer ">
@@ -31,22 +35,26 @@
           </div>
         </filter-options>
       </div>
-      <div v-if="bikes?.length" class="flex flex-wrap justify-center items-center gap-x-10 gap-y-16 mx-auto">
-        <BikeCard v-for="bike in bikes"
-                  :key="bike.id"
-                  :id="bike.id.toString()"
-                  :brand="bike.brandName"
-                  :model="bike.model"
-                  :img-url="bike.image_url"
-                  :price="bike.sales_price"
-                  :description="bike.description"
-                  :size="bike.size"
-                  :is-electric="bike.electric"
-                  :stock="bike.stock"/>
-      </div>
-      <div v-else class="text-center text-2xl mx-auto my-10">
-        <p>Désoler aucun vélo n'a été trouvé.</p>
-        <nuxt-link :to="route.path" class="btn-blue mt-5">Réinitialiser les filtres</nuxt-link>
+      <div class="mx-auto reveal reveal-bottom-400">
+        <div v-if="bikes?.length"
+             class="flex flex-wrap justify-center items-center gap-x-10 gap-y-16 ">
+          <BikeCard v-for="bike in bikes"
+                    :key="bike.id"
+                    :id="bike.id.toString()"
+                    :brand="bike.brandName"
+                    :model="bike.model"
+                    :img-url="bike.image_url"
+                    :price="bike.sales_price"
+                    :description="bike.description"
+                    :size="bike.size"
+                    :is-electric="bike.electric"
+                    :stock="bike.stock"
+          />
+        </div>
+        <div v-else class="text-center text-2xl mx-auto my-10">
+          <p>Désoler aucun vélo n'a été trouvé.</p>
+          <nuxt-link :to="route.path" class="btn-blue mt-5">Réinitialiser les filtres</nuxt-link>
+        </div>
       </div>
     </section>
   </main>
@@ -54,6 +62,8 @@
 
 <script setup lang="ts">
 import type {Bike} from '~/interfaces/Bike';
+
+useRevealTransitionItems();
 
 const router = useRouter();
 const route = useRoute();
