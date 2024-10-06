@@ -32,7 +32,11 @@
         </filter-options>
       </div>
       <div v-if="bikes?.length" class="flex flex-wrap justify-center items-center gap-x-10 gap-y-16 mx-auto">
-        <BikeCard v-for="bike in bikes" :key="bike.id" :brand="bike.brandName" :model="bike.model"
+        <BikeCard v-for="bike in bikes"
+                  :key="bike.id"
+                  :id="bike.id.toString()"
+                  :brand="bike.brandName"
+                  :model="bike.model"
                   :img-url="bike.image_url"
                   :price="bike.sales_price"
                   :description="bike.description"
@@ -63,7 +67,6 @@ import {nextTick} from 'vue';
 
 onMounted(async () => {
   bikes.value = await $fetch(`http://localhost:9000${route.fullPath}`);
-  console.log(bikes.value)
   if (bikes.value) originalBikes.value = [...bikes.value];
   await activateCheckbox();
 });
