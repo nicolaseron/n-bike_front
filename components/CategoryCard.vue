@@ -1,5 +1,5 @@
 <template>
-  <div class="w-72 text-center card">
+  <div class="w-72 text-center card mb-8">
     <div class="text-center w-72 h-80 overflow-hidden card">
       <nuxt-picture :src="src" class="w-full h-full categoryImg" loading="lazy"
                     :img-attrs="{ class: `object-cover w-full h-full rounded-md` , style : `object-position : ${objectPosition}`}"></nuxt-picture>
