@@ -1,5 +1,5 @@
 <template>
-<pre>{{ bike}}</pre>
+  <pre>{{ bike }}</pre>
 </template>
 
 <script setup>
@@ -9,6 +9,7 @@ onMounted(async () => {
   bike.value = await $fetch(`http://localhost:9000/bike/${route.params.id}`)
   console.log(bike.value)
 })
+console.log("test")
 </script>
 
 <style scoped>
