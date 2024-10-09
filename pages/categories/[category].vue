@@ -1,5 +1,5 @@
 <template>
-  <main class="min-h-screen">
+  <main class="min-h-screen mb-20">
     <section id="presentation">
       <h1 class="text-h1 text-gray-500 font-semibold text-center my-8 reveal reveal-bottom-400">
         {{ categoryStore.currentCategory.title }}</h1>
@@ -43,7 +43,7 @@
                     :id="bike.id.toString()"
                     :brand="bike.brandName"
                     :model="bike.model"
-                    :img-url="bike.image_url"
+                    :img-url="bike.images[0].url"
                     :price="bike.sales_price"
                     :description="bike.description"
                     :size="bike.size"

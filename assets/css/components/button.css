@@ -5,3 +5,8 @@
 .btn-white {
     @apply bg-white border px-7 py-3 font-semibold inline-block hover:bg-black hover:text-white hover:border-white transition-all duration-500
 }
+
+.btn-black {
+    @apply bg-black text-white border px-7 py-3 font-semibold inline-block hover:bg-white hover:text-black hover:border-black transition-all duration-500
+
+}

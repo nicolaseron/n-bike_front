@@ -76,3 +76,21 @@
     width: 1em;
     height: 1em;
 }
+
+.icon-bucket {
+    mask: url('/svg/icons/basket-shopping-solid.svg');
+    mask-position: center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    width: 1em;
+    height: 1em;
+}
+
+.icon-credit-card {
+    mask: url('/svg/icons/credit-card-solid.svg');
+    mask-position: center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    width: 1em;
+    height: 1em;
+}

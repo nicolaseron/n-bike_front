@@ -75,7 +75,7 @@
       </swiper-container>
     </section>
 
-    <section id="guide" class="mt-10 mb-20">
+    <section id="guide" class="mt-10">
       <div class="max-w-7xl mx-auto">
         <h2 class="text-h1 sm:text-8xl font-bold pl-16 sm:translate-y-4 reveal reveal-left-500">Le guide <br>VTTAE</h2>
         <div class="flex flex-col sm:flex-row max-w-6xl mx-auto reveal reveal-right-500">
@@ -95,7 +95,7 @@
       </div>
     </section>
 
-    <section id="bike-finder">
+    <section id="bike-finder" class="my-20">
       <div class="relative">
         <div class="flex items-center justify-center">
           <nuxt-picture src="/picture/img1.jpg" class="w-full h-full reveal reveal-left-400"
