@@ -8,4 +8,7 @@ export interface Bike {
     stock: number;
     size: string;
     electric: boolean;
+    images: [{ url: string, description: string }];
+    geometry_img_url: string;
+    transmission: string;
 }

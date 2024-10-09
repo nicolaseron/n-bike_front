@@ -1,7 +1,7 @@
 <template>
-  <footer class="bg-gray-100 text-center mt-16">
+  <footer class="bg-gray-100 text-center">
     <hr>
-    <nuxt-link to="/" class="w-3/6 xs:w-2/6 max-w-60 ">
+    <nuxt-link to="/" class="w-3/6 xs:w-2/6 max-w-52">
       <NuxtImg src="/logo/n-bike-logo.png" alt="logo" class="mx-auto py-10"/>
     </nuxt-link>
     <div class="flex justify-center flex-col sm:flex-row gap-x-16 gap-y-10 px-5 text-nowrap">
