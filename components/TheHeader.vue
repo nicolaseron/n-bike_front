@@ -7,7 +7,7 @@
         </nuxt-link>
         <div class="space-x-5">
           <nuxt-link to="#"><i class="icon icon-user text-2xl"></i></nuxt-link>
-          <nuxt-link to="#"><i class="icon icon-bag-shopping text-2xl"></i></nuxt-link>
+          <nuxt-link to="/Cart"><i class="icon icon-bag-shopping text-2xl"></i></nuxt-link>
         </div>
       </div>
     </div>
@@ -33,8 +33,8 @@ let lastScrollTop = ref(0);
 const scrollToDown = ref(false);
 
 const handleScroll = () => {
-    scrollToDown.value = window.scrollY > lastScrollTop.value;
-    lastScrollTop.value = window.scrollY;
+  scrollToDown.value = window.scrollY > lastScrollTop.value;
+  lastScrollTop.value = window.scrollY;
 };
 
 onMounted(() => {

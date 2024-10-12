@@ -21,13 +21,8 @@
               <p class=" px-1 sm:py-1 sm:px-2 flex justify-center items-center">{{ bike.size }}</p>
             </div>
           </div>
-          <div class="flex flex-col items-start m:flex-row gap-y-3 gap-x-5">
-            <button class="btn-black flex justify-start items-center text-nowrap">Acheter <i
-                class="icon icon-credit-card ml-2 "></i>
-            </button>
-            <button class="btn-black flex items-center text-nowrap">Ajouter au panier <i
-                class="icon icon-bucket ml-2"></i></button>
-          </div>
+          <button @click="addItems" class="btn-black flex items-center text-nowrap">Ajouter au panier <i
+              class="icon icon-bucket ml-2"></i></button>
         </div>
       </div>
       <div class="mt-20 sm:mt-10">
@@ -48,7 +43,6 @@
             <nuxt-picture :src="bike.geometry_img_url" alt="Géométrie du vélo" class="max-w-52"></nuxt-picture>
           </div>
         </div>
-        <!--        <pre>{{ bike }}</pre>-->
       </div>
     </div>
   </main>
@@ -64,6 +58,7 @@ const route = useRoute()
 const idBike = route.params.id;
 const {data: bike} = await useFetch(`http://localhost:9000/bike/${idBike}`)
 const {data: bikeByModel} = await useFetch(`http://localhost:9000/bike/getBikeSizeByModel/${idBike}`)
+const addItems = () => addItemToLocalStorage(bike.value);
 </script>
 
 <style scoped>
