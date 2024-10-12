@@ -1,5 +1,5 @@
 .btn-blue {
-    @apply bg-blue text-white p-2 rounded-md inline-block
+    @apply bg-blue text-white p-2 rounded-md inline-block hover:bg-black transition-all duration-500
 }
 
 .btn-white {
@@ -8,5 +8,5 @@
 
 .btn-black {
     @apply bg-black text-white border px-7 py-3 font-semibold inline-block hover:bg-white hover:text-black hover:border-black transition-all duration-500
-
 }
+
