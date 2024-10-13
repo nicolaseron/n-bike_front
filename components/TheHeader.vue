@@ -2,7 +2,7 @@
   <header class="bg-gray-100 w-full top-0 z-10" :class="{'header-up': scrollToDown}">
     <div class="border-b border-gray-200 py-4 px-2 xs:px-10">
       <div class="flex items-center justify-between max-w-7xl mx-auto">
-        <nuxt-link to="/" class="w-3/6 xs:w-2/6 max-w-80">
+        <nuxt-link to="/" class="w-3/6 xs:w-2/6 max-w-64">
           <NuxtImg src="/logo/n-bike-logo.png" alt="logo"/>
         </nuxt-link>
         <div class="space-x-5">
