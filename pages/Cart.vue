@@ -54,9 +54,12 @@ import {deleteItemFromLocalStorage} from "~/utils/deleteItemFromLocalStorage";
 import type {CartItem} from "~/interfaces/CartItem";
 
 const items = ref<CartItem[]>([]);
-const totalPrice = computed(() => items.value.reduce((total, item) =>
-    total + item.bike.sales_price * item.quantity, 0
-));
+const totalPrice = computed(() => {
+  const total = items.value.reduce((total, item) =>
+      total + item.bike.sales_price * item.quantity, 0
+  );
+  return (Math.round(total * 100) / 100).toFixed(2);
+});
 
 onMounted(() => {
       const storedItems = getItemFromLocalStorage()
