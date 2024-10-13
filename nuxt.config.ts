@@ -13,4 +13,5 @@ export default defineNuxtConfig({
             isCustomElement: (tag: string) => tag.startsWith('swiper'),
         },
     },
+    css: ['vue-toast-notification/dist/theme-default.css']
 })
