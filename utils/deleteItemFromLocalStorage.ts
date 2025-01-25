@@ -6,4 +6,6 @@ export const deleteItemFromLocalStorage = (item: CartItem) => {
         return i.bike.id !== item.bike.id
     });
     localStorage.setItem("cartItems", JSON.stringify(newListItems));
+
+    window.dispatchEvent(new Event("cartUpdated"));
 }

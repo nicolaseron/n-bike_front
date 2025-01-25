@@ -5,9 +5,13 @@
         <nuxt-link to="/" class="w-3/6 xs:w-2/6 max-w-64">
           <NuxtImg src="/logo/n-bike-logo.png" alt="logo"/>
         </nuxt-link>
-        <div class="space-x-5">
+        <div class="space-x-5 relative">
           <nuxt-link to="#"><i class="icon icon-user text-2xl"></i></nuxt-link>
           <nuxt-link to="/Cart"><i class="icon icon-bag-shopping text-2xl"></i></nuxt-link>
+          <div v-if="numberOfBike > 0"
+               class="absolute -top-3 -right-3 bg-blue text-white w-5 h-5 p-[2.5px] rounded-full text-center text-xs">
+            {{ numberOfBike }}
+          </div>
         </div>
       </div>
     </div>
@@ -27,10 +31,22 @@
 
 <script setup lang="ts">
 import {useRoute} from 'vue-router';
+import {onMounted, ref, watch} from 'vue';
 
 const route = useRoute();
 let lastScrollTop = ref(0);
 const scrollToDown = ref(false);
+const numberOfBike = ref(0);
+
+const getItemFromLocalStorage = () => {
+  const items = localStorage.getItem("cartItems");
+  return items ? JSON.parse(items) : [];
+};
+
+const updateBikeCount = () => {
+  const cartItems = getItemFromLocalStorage();
+  numberOfBike.value = cartItems.reduce((acc: number, item: { quantity: number }) => acc + item.quantity, 0);
+};
 
 const handleScroll = () => {
   scrollToDown.value = window.scrollY > lastScrollTop.value;
@@ -39,16 +55,19 @@ const handleScroll = () => {
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
+  updateBikeCount();
+
+  window.addEventListener('cartUpdated', updateBikeCount);
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll);
+  window.removeEventListener('cartUpdated', updateBikeCount);
 });
 
 watch(() => route.fullPath, () => {
   scrollToDown.value = false;
 });
-
 </script>
 
 <style scoped>

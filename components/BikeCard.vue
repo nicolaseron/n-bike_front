@@ -16,7 +16,7 @@
         </div>
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
           <p>€ {{ price }}</p>
-          <p class="text-nowrap">{{ stock }} en stock</p>
+          <p v-if="stock != null" class="text-nowrap">{{ stock > 1 ? `${stock} en stock` : "Pas de stock" }}</p>
         </div>
       </div>
     </nuxt-link>
