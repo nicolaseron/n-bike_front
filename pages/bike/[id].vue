@@ -58,8 +58,8 @@ useRevealTransitionItems();
 
 const route = useRoute()
 const idBike = route.params.id;
-const {data: bike} = await useFetch(`http://localhost:9000/bike/${idBike}`)
-const {data: bikeByModel} = await useFetch(`http://localhost:9000/bike/getBikeSizeByModel/${idBike}`)
+const {data: bike} = await useFetch(`http://localhost:8080/bike/${idBike}`)
+const {data: bikeByModel} = await useFetch(`http://localhost:8080/bike/getBikeSizeByModel/${idBike}`)
 const addItems = () => {
   addItemToLocalStorage(bike.value)
   $toast.success("L'article à bien été ajouté au panier !");

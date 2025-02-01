@@ -76,7 +76,7 @@ const originalBikes = ref<Bike[] | null>(null);
 import {nextTick} from 'vue';
 
 onMounted(async () => {
-  bikes.value = await $fetch(`http://localhost:9000${route.fullPath}`);
+  bikes.value = await $fetch(`http://localhost:8080${route.fullPath}`);
   if (bikes.value) originalBikes.value = [...bikes.value];
   await activateCheckbox();
 });

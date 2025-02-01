@@ -210,7 +210,7 @@ function confirmOrder() {
         quantity: item.quantity
       });
     })
-    $fetch('http://localhost:9000/createSalesOrder', {
+    $fetch('http://localhost:8080/createSalesOrder', {
       method: "POST",
       body: JSON.stringify(form.value),
     })
