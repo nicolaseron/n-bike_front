@@ -8,6 +8,14 @@ export default defineNuxtConfig({
             scrollBehaviorType: 'smooth'
         }
     },
+    runtimeConfig: {
+        public: {
+            apiBase: 'http://localhost:8080'
+        }
+    },
+    app: {
+        baseURL: '/'
+    },
     vue: {
         compilerOptions: {
             isCustomElement: (tag: string) => tag.startsWith('swiper'),

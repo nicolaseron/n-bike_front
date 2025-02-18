@@ -24,7 +24,7 @@
     </div>
     <section id="bikes" class="flex mt-10">
       <div
-          class="h-[500px] overflow-y-scroll space-y-3 sticky top-24 sm:top-40 min-w-40 sm:min-w-56 px-2 sm:px-5 reveal reveal-left-400"
+          class="h-[500px] overflow-y-auto space-y-3 sticky top-24 sm:top-40 min-w-40 sm:min-w-56 px-2 sm:px-5 reveal reveal-left-400"
           id="custom-scrollbar">
         <filter-options v-for="filter in filteredStore.filter" class="filter-group" :key="filter.id"
                         :id="filter.search_url" :heading-name="filter.title">
@@ -62,7 +62,8 @@
 
 <script setup lang="ts">
 import type {Bike} from '~/interfaces/Bike';
-
+const config = useRuntimeConfig();
+const apiUrl = config.public.apiUrl;
 useRevealTransitionItems();
 
 const router = useRouter();
@@ -76,7 +77,7 @@ const originalBikes = ref<Bike[] | null>(null);
 import {nextTick} from 'vue';
 
 onMounted(async () => {
-  bikes.value = await $fetch(`http://localhost:8080${route.fullPath}`);
+  bikes.value = await $fetch(`${apiUrl}${route.fullPath}`);
   if (bikes.value) originalBikes.value = [...bikes.value];
   await activateCheckbox();
 });
@@ -160,7 +161,7 @@ const isArray = (value: unknown): value is Array<unknown> => {
 };
 
 watch(() => route.fullPath, async () => {
-  bikes.value = await $fetch(`http://localhost:9000${route.fullPath}`);
+  bikes.value = await $fetch(`${apiUrl}${route.fullPath}`);
   await activateCheckbox();
 });
 

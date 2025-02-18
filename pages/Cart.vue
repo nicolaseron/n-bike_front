@@ -144,6 +144,9 @@
 import {getItemFromLocalStorage} from "~/utils/getItemFromLocalStorage";
 import {deleteItemFromLocalStorage} from "~/utils/deleteItemFromLocalStorage";
 import type {CartItem} from "~/interfaces/CartItem";
+definePageMeta({
+  middleware: ['auth'],
+});
 
 const items = ref<CartItem[]>([]);
 
